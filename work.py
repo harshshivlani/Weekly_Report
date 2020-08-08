@@ -384,7 +384,7 @@ def updated_world_indices(category='Major', timeframe='Daily'):
     for i in range(len(idxs)):
         df = df.join(idx_data(index_names[i], country_names[i]), on='Date')
         
-    df1 = df.iloc[:-1,:].ffill().dropna()
+    df1 = df.ffill().dropna()
     df1.index.name = 'Date'
     
     
